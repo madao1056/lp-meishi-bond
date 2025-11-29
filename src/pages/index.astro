@@ -1,16 +1,984 @@
 ---
+// 名刺のQRコードから遷移する専用LPページ
+// 目的:
+// ・初対面の経営者に「何を頼める人か」「どんな強みがあるか」を端的に伝える
+// ・無料資料のダウンロードと相談フォーム送信をゴールにする
 
+const pageTitle =
+  "人とデジタルのバランスを整え、地域の事業を成長へ導く｜合同会社ぼんど";
+const pageDescription =
+  "宮崎の事業者の本音を丁寧に引き出し、最適な形に整える伴走型デジタル支援。Web制作・集客サポート・AI自動化・ローカルメディア運営まで、事業のステージに合わせて一気通貫でサポートします。";
+const currentYear = new Date().getFullYear();
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {/*
+      名刺専用LPのため、検索流入は想定しない場合は noindex を推奨
+      公開後に通常のLPとしても使うなら、この meta は削除
+    */}
+    <meta name="robots" content="noindex,nofollow" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero-text">
+          <p class="hero-label">合同会社ぼんど / 橋口 真幸</p>
+          <h1 class="hero-title">
+            人とデジタルのバランスを整え、<br />
+            地域の事業を成長へ導く。
+          </h1>
+          <p class="hero-sub">
+            宮崎の事業者の本音を丁寧に引き出し、<br />
+            最適な形に整える伴走型デジタル支援。
+          </p>
+          <p class="hero-desc">
+            Web制作・集客サポート・AI自動化・ローカルメディア運営まで、<br
+              class="only-desktop"
+            />
+            事業のステージにあわせて一気通貫でサポートします。
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary">無料で相談する</a>
+            <a href="#materials" class="btn-secondary">資料を受け取る</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-photo-card">
+            {/*
+              ここは名刺と同じ顔写真を配置
+              /images/gussan-profile.jpg はプロジェクト側で用意してください
+            */}
+            <img
+              src="/gussan-image.png"
+              alt="合同会社ぼんど 代表 橋口真幸"
+              class="hero-photo"
+              loading="lazy"
+            />
+            <p class="hero-name">橋口 真幸</p>
+            <p class="hero-role">Web制作 / 集客サポート / AI自動化</p>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="section" id="services">
+          <div class="section-header">
+            <h2 class="section-title">提供していること</h2>
+            <p class="section-lead">
+              累計150サイト以上の制作と、現場に根ざした実務経験をもとに、<br
+                class="only-desktop"
+              />
+              小さな事業者でも取り組みやすい形でデジタル活用を支援します。
+            </p>
+          </div>
+
+          <div class="grid grid-2">
+            <div class="card">
+              <h3 class="card-title">Web制作（HP / LP / EC）</h3>
+              <p class="card-text">
+                事業の目的から逆算して、「作って終わり」ではなく<br
+                  class="only-desktop"
+                />
+                きちんと使われるWebサイトを設計します。
+              </p>
+              <ul class="list">
+                <li>会社サイト・サービスサイト</li>
+                <li>キャンペーン用LP</li>
+                <li>ECサイト（Shopify / BASE など）</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3 class="card-title">集客サポート（MEO / SNS / LINE）</h3>
+              <p class="card-text">
+                来店・予約・お問い合わせにつながる導線設計を重視し、<br
+                  class="only-desktop"
+                />
+                店舗・事業の実態にあわせて設計します。
+              </p>
+              <ul class="list">
+                <li>Googleマップ（MEO）初期設計・改善</li>
+                <li>公式LINEの構成・ステップ設計</li>
+                <li>LPとSNSをつないだ導線構築</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3 class="card-title">AI自動化（予約 / 分析 / 業務効率化）</h3>
+              <p class="card-text">
+                予約受付、集計、定型連絡などの「繰り返し作業」を仕組み化し、<br
+                  class="only-desktop"
+                />
+                売上につながる時間を増やします。
+              </p>
+              <ul class="list">
+                <li>予約フォーム〜カレンダー連携</li>
+                <li>売上・予約データの自動集計</li>
+                <li>社内向けのAI活用設計</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3 class="card-title">地域ビジネスの総合支援</h3>
+              <p class="card-text">
+                宮崎特有の人間関係や商習慣を踏まえつつ、<br
+                  class="only-desktop"
+                />
+                デジタルで一気に進められる部分を仕組みにしていきます。
+              </p>
+              <ul class="list">
+                <li>イベント・コミュニティ運営のデジタル設計</li>
+                <li>BtoB / M&amp;Aなど高単価案件の導線設計</li>
+                <li>長期的な伴走サポート</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-alt" id="reasons">
+          <div class="section-header">
+            <h2 class="section-title">選ばれる理由</h2>
+            <p class="section-lead">
+              デジタルの前に、「そもそも何に悩んでいるのか」。<br
+                class="only-desktop"
+              />
+              そこから一緒に整理していくスタイルです。
+            </p>
+          </div>
+
+          <div class="grid grid-3">
+            <div class="card-flat">
+              <p class="reason-label">理由 1</p>
+              <h3 class="card-title-sm">7年間、公務員として地域インフラを担当</h3>
+              <p class="card-text-sm">
+                水道施設の維持管理・更新改修（6年）、<br />
+                市営住宅や公共施設の修繕・改修（1年）を担当。<br />
+                現場の泥臭い課題と向き合ってきた経験から、<br />
+                机上の空論ではない現実的な整理と提案を行います。
+              </p>
+            </div>
+
+            <div class="card-flat">
+              <p class="reason-label">理由 2</p>
+              <h3 class="card-title-sm">独学で150サイト以上を制作</h3>
+              <p class="card-text-sm">
+                独学のみでHP・LP・ECサイトなど、<br />
+                累計150サイト以上の制作に関わってきました。<br />
+                小さな事業者がつまづきやすいポイントを理解しているため、<br />
+                負担を増やさずに進めるやり方を一緒に考えます。
+              </p>
+            </div>
+
+            <div class="card-flat">
+              <p class="reason-label">理由 3</p>
+              <h3 class="card-title-sm">経営者の本音を引き出し、言語化する</h3>
+              <p class="card-text-sm">
+                「本当はどうしたいのか」「何にモヤモヤしているのか」。<br />
+                そうした言葉になっていない部分を一緒に整理し、<br />
+                行動できるレベルまで分解・言語化していくのが得意です。
+              </p>
+            </div>
+
+            <div class="card-flat">
+              <p class="reason-label">理由 4</p>
+              <h3 class="card-title-sm">宮崎の"人のあたたかさ"とデジタルの両方を理解</h3>
+              <p class="card-text-sm">
+                仲間意識の強さや、人間関係の濃さは宮崎の大きな魅力です。<br />
+                一方で、「他がやっていないから」とデジタル化が止まりがちな面も。<br />
+                人の良さを残しつつ、仕組みにできる部分はデジタルで一気に進めます。
+              </p>
+            </div>
+
+            <div class="card-flat">
+              <p class="reason-label">理由 5</p>
+              <h3 class="card-title-sm">ローカルメディア「みやびと」を運営</h3>
+              <p class="card-text-sm">
+                宮崎で挑戦する経営者のストーリーを紹介する<br />
+                ローカルメディア「みやびと」を運営。<br />
+                取材を通じて、多様な経営者の価値観や課題感に触れています。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="industries">
+          <div class="section-header">
+            <h2 class="section-title">主な支援ジャンル</h2>
+            <p class="section-lead">
+              それぞれの現場にあわせて、デジタルと人の動きを一緒に設計します。
+            </p>
+          </div>
+
+          <div class="grid grid-3">
+            <div class="tag-card">
+              <h3 class="tag-title">飲食</h3>
+              <p class="tag-text">メニュー動線・予約導線・LP改善</p>
+            </div>
+            <div class="tag-card">
+              <h3 class="tag-title">農業</h3>
+              <p class="tag-text">内部データ管理・ECサイト制作</p>
+            </div>
+            <div class="tag-card">
+              <h3 class="tag-title">不動産</h3>
+              <p class="tag-text">HP制作</p>
+            </div>
+            <div class="tag-card">
+              <h3 class="tag-title">医療</h3>
+              <p class="tag-text">HP制作・改善</p>
+            </div>
+            <div class="tag-card">
+              <h3 class="tag-title">美容・サロン</h3>
+              <p class="tag-text">チラシ・フライヤー制作・MEO初期設定</p>
+            </div>
+            <div class="tag-card">
+              <h3 class="tag-title">物販・EC</h3>
+              <p class="tag-text">Shopify / BASE のEC最適化</p>
+            </div>
+            <div class="tag-card">
+              <h3 class="tag-title">地域団体</h3>
+              <p class="tag-text">情報発信支援・LINE最適化・HP制作</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-alt" id="projects">
+          <div class="section-header">
+            <h2 class="section-title">プロジェクト例</h2>
+          </div>
+
+          <div class="grid grid-2">
+            <article class="project-card">
+              <img
+                src="/apple-farm.webp"
+                alt="青森県りんご農家ECサイト"
+                class="project-image"
+                loading="lazy"
+              />
+              <div class="project-content">
+                <p class="project-label">青森県 りんご農家</p>
+                <h3 class="project-title">自社ECサイト構築とファンづくりの導線設計</h3>
+                <p class="project-text">
+                  産地の魅力や農家さんの想いが伝わるよう、<br
+                    class="only-desktop"
+                  />
+                  写真・文章・購入導線を一体で設計。<br />
+                  リピートしやすい構成と情報設計を行いました。
+                </p>
+                <a
+                  href="https://www.hirosaki-redapple.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-link"
+                  >サイトを見る</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card">
+              <img
+                src="/women-startup.png"
+                alt="東京都女性活躍推進事業サイト"
+                class="project-image"
+                loading="lazy"
+              />
+              <div class="project-content">
+                <p class="project-label">東京都 女性活躍推進事業</p>
+                <h3 class="project-title">公共事業サイトの情報整理とUI設計</h3>
+                <p class="project-text">
+                  スタートアップ・エコシステムにおける<br
+                    class="only-desktop"
+                  />
+                  女性活躍推進事業のサイト。<br />
+                  多数の関係者がいる中で情報を整理し、<br />
+                  誰にとっても見やすい構成へと再設計しました。
+                </p>
+                <a
+                  href="https://women-startup-vc.metro.tokyo.lg.jp/"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-link"
+                  >サイトを見る</a
+                >
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="story">
+          <div class="section-header">
+            <h2 class="section-title">橋口 真幸について</h2>
+          </div>
+
+          <div class="story">
+            <p>
+              宮崎市出身。7年間、公務員として水道施設の維持管理・更新改修、市営住宅・公共施設の修繕や改修工事を担当してきました。
+            </p>
+            <p>
+              そのなかで、「仕組みが整えば現場の負担が大きく減る」「でも、その仕組みをつくる人が足りていない」という課題を感じ、独学でWeb制作やデジタル活用を学びはじめました。
+            </p>
+            <p>
+              現在は、累計150サイト以上のHP・LP・EC制作に関わりつつ、MEOや公式LINE、AIを組み合わせた業務改善・集客導線づくりを支援しています。
+            </p>
+            <p>
+              人のあたたかさを大切にしながら、デジタルで一気に進められるところは仕組みにする。そんな「いいとこ取り」のスタイルで、宮崎の事業が前に進むきっかけをつくれたらうれしいです。
+            </p>
+          </div>
+        </section>
+
+        <section class="section section-alt" id="materials">
+          <div class="section-header">
+            <h2 class="section-title">無料ダウンロード資料</h2>
+            <p class="section-lead">
+              必要な資料を選んで、まとめて受け取れます。<br
+                class="only-desktop"
+              />
+              相談前の情報整理や、社内での検討にもご活用ください。
+            </p>
+          </div>
+
+          <div class="grid grid-2">
+            <ul class="list-big">
+              <li>MEO対策 完全版</li>
+              <li>公式LINE 活用手順書</li>
+              <li>生きたHP活用術</li>
+              <li>ECサイトの落とし穴</li>
+              <li>AIを使った業務改善法</li>
+              <li>いい業者・悪い業者の見分け方</li>
+            </ul>
+
+            <div class="notice">
+              <p class="notice-title">こんな方に特におすすめです</p>
+              <ul class="list">
+                <li>とりあえず何から手を付ければよいか整理したい</li>
+                <li>業者選びで失敗したくない</li>
+                <li>自社にとって本当に必要な施策だけを知りたい</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="contact">
+          <div class="section-header">
+            <h2 class="section-title">資料請求・ご相談フォーム</h2>
+            <p class="section-lead">
+              下記フォームから資料請求とご相談を受け付けています。<br
+                class="only-desktop"
+              />
+              こちらから営業電話をかけることはありませんので、ご安心ください。
+            </p>
+          </div>
+
+          {/*
+            実運用では:
+            - action に送信先エンドポイント（Formspree / 独自APIなど）を設定
+            - method="POST" を指定
+            - name 属性で項目名を決定
+          */}
+          <form class="form">
+            <div class="form-row">
+              <label class="form-label" for="name">お名前</label>
+              <input id="name" name="name" type="text" class="form-input" required />
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="email">メールアドレス</label>
+              <input id="email" name="email" type="email" class="form-input" required />
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="tel">電話番号</label>
+              <input id="tel" name="tel" type="tel" class="form-input" />
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="business">事業ジャンル</label>
+              <input
+                id="business"
+                name="business"
+                type="text"
+                class="form-input"
+                placeholder="例：飲食、農業、美容サロン、物販、地域団体 など"
+              />
+            </div>
+
+            <div class="form-row">
+              <p class="form-label">ダウンロードしたい資料</p>
+              <div class="form-checkbox-group">
+                <label class="checkbox">
+                  <input type="checkbox" name="materials" value="meo" />
+                  <span>MEO対策 完全版</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="materials" value="line" />
+                  <span>公式LINE 活用手順書</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="materials" value="hp" />
+                  <span>生きたHP活用術</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="materials" value="ec" />
+                  <span>ECサイトの落とし穴</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="materials" value="ai" />
+                  <span>AIを使った業務改善法</span>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="materials" value="vendor" />
+                  <span>いい業者・悪い業者の見分け方</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label class="form-label" for="message">ご相談・メッセージ（任意）</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="form-textarea"
+                placeholder="今感じているモヤモヤや、検討中のことなどを書いていただけるとスムーズです。"
+              ></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">
+                資料を請求する / 相談内容を送信する
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section class="section section-alt section-final">
+          <div class="final-inner">
+            <p class="final-text">
+              宮崎の事業が、もう少しだけ前に進むお手伝いができればうれしいです。<br
+                class="only-desktop"
+              />
+              まずは、今どんな状況なのかを一緒に整理するところからはじめましょう。
+            </p>
+            <a href="#contact" class="btn-primary">ぼんどに相談してみる</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p class="footer-text">© {currentYear} 合同会社ぼんど / Bond LLC</p>
+      </footer>
+    </div>
+  </body>
+
+  <style>
+    :root {
+      --color-bg: #fafaf9;
+      --color-surface: #ffffff;
+      --color-muted: #f3f4f6;
+
+      --color-primary: #1f2e6c;
+      --color-accent: #fad707;
+      --color-accent-deep: #d0a51d;
+      --color-earth: #734a27;
+
+      --color-text-main: #111827;
+      --color-text-sub: #4b5563;
+
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+        "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", Meiryo,
+        sans-serif;
+      background: #eef6fc;
+      color: var(--color-text-main);
+      line-height: 1.7;
+    }
+
+    .page {
+      min-height: 100vh;
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+      background: radial-gradient(circle at top left, #fffbe8 0, #fafaf9 48%, #f3f4f6 100%);
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 48px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-text {
+      padding: 0;
+    }
+
+    .hero-label {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-earth);
+      margin: 0 0 8px;
+    }
+
+    .hero-title {
+      margin: 0 0 12px;
+      font-size: 28px;
+      line-height: 1.5;
+      color: var(--color-primary);
+    }
+
+    .hero-sub {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: var(--color-text-main);
+    }
+
+    .hero-desc {
+      margin: 0 0 20px;
+      font-size: 14px;
+      color: var(--color-text-sub);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-photo-card {
+      position: relative;
+      background: var(--color-surface);
+      padding: 14px 14px 18px;
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+
+    .hero-photo-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      padding: 1px;
+      background: linear-gradient(
+        135deg,
+        rgba(250, 215, 7, 0.7),
+        rgba(31, 46, 108, 0.7)
+      );
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .hero-photo {
+      display: block;
+      width: 160px;
+      height: auto;
+      border-radius: 999px;
+      margin: 0 auto 10px;
+      object-fit: cover;
+    }
+
+    .hero-name {
+      margin: 0 0 2px;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .hero-role {
+      margin: 0;
+      font-size: 12px;
+      color: var(--color-text-sub);
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+        background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: #ffffff;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.22);
+    }
+
+    .btn-secondary {
+      background: rgba(250, 215, 7, 0.08);
+      color: var(--color-primary);
+      border-color: rgba(31, 46, 108, 0.16);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(250, 215, 7, 0.16);
+      border-color: rgba(31, 46, 108, 0.28);
+    }
+
+    .section {
+      padding: 32px 0;
+    }
+
+    .section-alt {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 24px;
+      padding-inline: 18px;
+      padding-block: 32px;
+      margin-inline: -18px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.05);
+    }
+
+    .section-header {
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      margin: 0 0 6px;
+      font-size: 20px;
+      color: var(--color-primary);
+    }
+
+    .section-lead {
+      margin: 0;
+      font-size: 14px;
+      color: var(--color-text-sub);
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .card {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 16px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .card-flat {
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: var(--radius-md);
+      padding: 14px 14px 12px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .card-title {
+      margin: 0 0 6px;
+      font-size: 15px;
+      color: var(--color-primary);
+    }
+
+    .card-title-sm {
+      margin: 0 0 4px;
+      font-size: 14px;
+      color: var(--color-primary);
+    }
+
+    .card-text {
+      margin: 0 0 8px;
+      font-size: 13px;
+      color: var(--color-text-sub);
+    }
+
+    .card-text-sm {
+      margin: 0;
+      font-size: 12px;
+      color: var(--color-text-sub);
+    }
+
+    .reason-label {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-earth);
+      margin: 0 0 4px;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13px;
+      color: var(--color-text-main);
+    }
+
+    .list li + li {
+      margin-top: 4px;
+    }
+
+    .list-big {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--color-text-main);
+    }
+
+    .list-big li + li {
+      margin-top: 6px;
+    }
+
+    .tag-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .tag-title {
+      margin: 0 0 2px;
+      font-size: 14px;
+      color: var(--color-primary);
+    }
+
+    .tag-text {
+      margin: 0;
+      font-size: 12px;
+      color: var(--color-text-sub);
+    }
+
+
+    .project-label {
+      margin: 0 0 4px;
+      font-size: 12px;
+      color: var(--color-earth);
+    }
+
+    .project-title {
+      margin: 0 0 6px;
+      font-size: 15px;
+      color: var(--color-primary);
+    }
+
+    .project-text {
+      margin: 0 0 8px;
+      font-size: 13px;
+      color: var(--color-text-sub);
+    }
+
+    .project-link {
+      font-size: 13px;
+      color: var(--color-primary);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(31, 46, 108, 0.4);
+      padding-bottom: 1px;
+    }
+
+    .project-link:hover {
+      border-bottom-color: rgba(31, 46, 108, 0.8);
+    }
+
+    .story {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+      font-size: 13px;
+      color: var(--color-text-main);
+    }
+
+    .story p {
+      margin: 0 0 10px;
+    }
+
+    .story p:last-child {
+      margin-bottom: 0;
+    }
+
+    .notice {
+      background: rgba(250, 215, 7, 0.07);
+      border-radius: var(--radius-lg);
+      padding: 14px 16px;
+      border: 1px solid rgba(208, 165, 29, 0.4);
+    }
+
+    .notice-title {
+      margin: 0 0 6px;
+      font-size: 14px;
+      color: var(--color-earth);
+    }
+
+    .form {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      padding: 20px 18px 18px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      width: 100%;
+    }
+
+    .form-row {
+      margin-bottom: 12px;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+      color: var(--color-text-main);
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.12s ease, box-shadow 0.12s ease;
+      background: #ffffff;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 1px rgba(31, 46, 108, 0.2);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-checkbox-group {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 8px;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--color-text-main);
+    }
+
+    .checkbox input {
+      width: 14px;
+      height: 14px;
+    }
+
+    .form-actions {
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .section-final {
+      text-align: center;
+    }
+
+    .final-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .final-text {
+      margin: 0 0 14px;
+      font-size: 14px;
+      color: var(--color-text-main);
+    }
+
+    .footer {
+      margin-top: 32px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--color-text-sub);
+    }
+
+    .footer-text {
+      margin: 0;
+    }
+
+    .only-desktop {
+      display: none;
+    }
+
+    .project-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 10px 32px rgba(15, 23, 42, 0.06);
+    }
+
+    .project-image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-content {
+      padding: 18px 18px 14px;
+    }
+
+    .section-alt {
+      margin-inline: -14px;
+      padding-inline: 14px;
+    }
+
+    @media (min-width: 751px) {
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+    }
+  </style>
 </html>
