@@ -167,7 +167,8 @@ const currentYear = new Date().getFullYear();
           </div>
 
           <div class="grid grid-3">
-            <div class="card-flat">
+            <div class="card-flat attitude-card">
+              <img src="/card-flat01.jpg" alt="" class="card-flat-bg-image" loading="lazy" />
               <p class="reason-label">姿勢 1</p>
               <h3 class="card-title-sm">現場の声を最優先に考える</h3>
               <p class="card-text-sm">
@@ -178,7 +179,8 @@ const currentYear = new Date().getFullYear();
               </p>
             </div>
 
-            <div class="card-flat">
+            <div class="card-flat attitude-card">
+              <img src="/card-flat02.jpg" alt="" class="card-flat-bg-image" loading="lazy" />
               <p class="reason-label">姿勢 2</p>
               <h3 class="card-title-sm">「わからない」を恥ずかしがらせない</h3>
               <p class="card-text-sm">
@@ -189,7 +191,8 @@ const currentYear = new Date().getFullYear();
               </p>
             </div>
 
-            <div class="card-flat">
+            <div class="card-flat attitude-card">
+              <img src="/card-flat03.jpg" alt="" class="card-flat-bg-image" loading="lazy" />
               <p class="reason-label">姿勢 3</p>
               <h3 class="card-title-sm">言葉にならないモヤモヤも大切にする</h3>
               <p class="card-text-sm">
@@ -200,7 +203,8 @@ const currentYear = new Date().getFullYear();
               </p>
             </div>
 
-            <div class="card-flat">
+            <div class="card-flat attitude-card">
+              <img src="/card-flat04.jpg" alt="" class="card-flat-bg-image" loading="lazy" />
               <p class="reason-label">姿勢 4</p>
               <h3 class="card-title-sm">地域の関係性を壊さず、むしろ強くする</h3>
               <p class="card-text-sm">
@@ -211,7 +215,8 @@ const currentYear = new Date().getFullYear();
               </p>
             </div>
 
-            <div class="card-flat">
+            <div class="card-flat attitude-card">
+              <img src="/card-flat05.jpg" alt="" class="card-flat-bg-image" loading="lazy" />
               <p class="reason-label">姿勢 5</p>
               <h3 class="card-title-sm">成功も失敗も、すべて共有する</h3>
               <p class="card-text-sm">
@@ -757,6 +762,28 @@ const currentYear = new Date().getFullYear();
       border-radius: var(--radius-md);
       padding: 14px 14px 12px;
       border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .attitude-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-flat-bg-image {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+      clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    .attitude-card > *:not(.card-flat-bg-image) {
+      position: relative;
+      z-index: 1;
     }
 
     .card-title {
