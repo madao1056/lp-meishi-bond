@@ -100,7 +100,8 @@ const currentYear = new Date().getFullYear();
           </div>
 
           <div class="grid grid-2">
-            <div class="card">
+            <div class="card service-card">
+              <img src="/card01.jpg" alt="" class="card-bg-image" loading="lazy" />
               <h3 class="card-title">Web制作（HP / LP / EC）</h3>
               <p class="card-text">
                 事業の目的から逆算して、「作って終わり」ではなく<br>
@@ -113,7 +114,8 @@ const currentYear = new Date().getFullYear();
               </ul>
             </div>
 
-            <div class="card">
+            <div class="card service-card">
+              <img src="/card02.jpg" alt="" class="card-bg-image" loading="lazy" />
               <h3 class="card-title">集客サポート（MEO / SNS / LINE）</h3>
               <p class="card-text">
                 来店・予約・お問い合わせにつながる導線設計を重視し、<br>
@@ -126,7 +128,8 @@ const currentYear = new Date().getFullYear();
               </ul>
             </div>
 
-            <div class="card">
+            <div class="card service-card">
+              <img src="/card03.jpg" alt="" class="card-bg-image" loading="lazy" />
               <h3 class="card-title">AI自動化（予約 / 分析 / 業務効率化）</h3>
               <p class="card-text">
                 予約受付、集計、定型連絡などの「繰り返し作業」を仕組み化し、<br>
@@ -139,7 +142,8 @@ const currentYear = new Date().getFullYear();
               </ul>
             </div>
 
-            <div class="card">
+            <div class="card service-card">
+              <img src="/card04.jpg" alt="" class="card-bg-image" loading="lazy" />
               <h3 class="card-title">地域ビジネスの総合支援</h3>
               <p class="card-text">
                 宮崎特有の人間関係や商習慣を踏まえつつ、<br>
@@ -669,13 +673,13 @@ const currentYear = new Date().getFullYear();
       border: 1px solid rgba(31, 46, 108, 0.3);
       transition: all 0.15s ease;
       cursor: pointer;
+      margin-inline:auto;
     }
 
     .btn-outline:hover {
       background: rgba(31, 46, 108, 0.05);
       border-color: rgba(31, 46, 108, 0.5);
       transform: translateY(-1px);
-      margin-inline:auto;
     }
 
     .section {
@@ -726,6 +730,26 @@ const currentYear = new Date().getFullYear();
       border: 1px solid rgba(148, 163, 184, 0.3);
       min-height: 14rem;
       overflow:hidden;
+    }
+
+    .service-card {
+      position: relative;
+    }
+
+    .card-bg-image {
+      position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 75%;
+    height: 70%;
+      object-fit: cover;
+      clip-path: polygon(100% 30%,50% 100%,100% 100%);
+      z-index: 0;
+    }
+
+    .service-card > *:not(.card-bg-image) {
+      position: relative;
+      z-index: 1;
     }
 
     .card-flat {
