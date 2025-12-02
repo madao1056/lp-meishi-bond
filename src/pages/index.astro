@@ -66,6 +66,9 @@ const currentYear = new Date().getFullYear();
           </p>
           <div class="hero-actions">
             <a href="#materials" class="btn-secondary">(無料)資料を受け取る</a>
+            <a href="https://bond-llc.jp" target="_blank" rel="noopener noreferrer" class="btn-outline">
+              事業サイトを見る →
+            </a>
           </div>
         </div>
 
@@ -225,35 +228,16 @@ const currentYear = new Date().getFullYear();
             </p>
           </div>
 
-          <div class="grid grid-3">
-            <div class="tag-card">
-              <h3 class="tag-title">飲食</h3>
-              <p class="tag-text">メニュー動線・予約導線・LP改善</p>
-            </div>
-            <div class="tag-card">
-              <h3 class="tag-title">農業</h3>
-              <p class="tag-text">内部データ管理・ECサイト制作</p>
-            </div>
-            <div class="tag-card">
-              <h3 class="tag-title">不動産</h3>
-              <p class="tag-text">HP制作</p>
-            </div>
-            <div class="tag-card">
-              <h3 class="tag-title">医療</h3>
-              <p class="tag-text">HP制作・改善</p>
-            </div>
-            <div class="tag-card">
-              <h3 class="tag-title">美容・サロン</h3>
-              <p class="tag-text">チラシ・フライヤー制作・MEO初期設定</p>
-            </div>
-            <div class="tag-card">
-              <h3 class="tag-title">物販・EC</h3>
-              <p class="tag-text">Shopify / BASE のEC最適化</p>
-            </div>
-            <div class="tag-card">
-              <h3 class="tag-title">地域団体</h3>
-              <p class="tag-text">情報発信支援・LINE最適化・HP制作</p>
-            </div>
+          <div class="industry-list">
+            <p class="industry-items">
+              <strong>飲食</strong>（メニュー動線・予約導線・LP改善）/ 
+              <strong>農業</strong>（内部データ管理・ECサイト制作）/ 
+              <strong>不動産</strong>（HP制作）/ 
+              <strong>医療</strong>（HP制作・改善）/ 
+              <strong>美容・サロン</strong>（チラシ・フライヤー制作・MEO初期設定）/ 
+              <strong>物販・EC</strong>（Shopify / BASE のEC最適化）/ 
+              <strong>地域団体</strong>（情報発信支援・LINE最適化・HP制作）
+            </p>
           </div>
         </section>
 
@@ -467,7 +451,12 @@ const currentYear = new Date().getFullYear();
             あなたの事業を進めるためにできることは全てする。<br>
             まずは、今どんな状況なのかを一緒に整理するところからはじめましょう。
             </p>
-            <a href="#contact" class="btn-primary">ぼんど に相談してみる</a>
+            <div class="final-actions">
+              <a href="#contact" class="btn-primary">ぼんど に相談してみる</a>
+              <a href="https://bond-llc.jp" target="_blank" rel="noopener noreferrer" class="btn-outline">
+                事業サイトで詳しく見る →
+              </a>
+            </div>
           </div>
         </section>
       </main>
@@ -563,10 +552,16 @@ const currentYear = new Date().getFullYear();
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .final-actions {
+      display: flex;
+      flex-direction: column;
       gap: 12px;
       align-items: center;
-      justify-content: center;
     }
 
     .hero-visual {
@@ -653,11 +648,34 @@ const currentYear = new Date().getFullYear();
       background: rgba(250, 215, 7, 0.08);
       color: var(--color-primary);
       border-color: rgba(31, 46, 108, 0.16);
+      margin-inline:auto;
     }
 
     .btn-secondary:hover {
       background: rgba(250, 215, 7, 0.16);
       border-color: rgba(31, 46, 108, 0.28);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      background: transparent;
+      color: var(--color-primary);
+      border: 1px solid rgba(31, 46, 108, 0.3);
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+
+    .btn-outline:hover {
+      background: rgba(31, 46, 108, 0.05);
+      border-color: rgba(31, 46, 108, 0.5);
+      transform: translateY(-1px);
+      margin-inline:auto;
     }
 
     .section {
@@ -706,6 +724,8 @@ const currentYear = new Date().getFullYear();
       padding: 18px 18px 16px;
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
       border: 1px solid rgba(148, 163, 184, 0.3);
+      min-height: 14rem;
+      overflow:hidden;
     }
 
     .card-flat {
@@ -769,23 +789,23 @@ const currentYear = new Date().getFullYear();
       margin-top: 6px;
     }
 
-    .tag-card {
+    .industry-list {
       background: var(--color-surface);
-      border-radius: var(--radius-md);
-      padding: 12px 14px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
     }
 
-    .tag-title {
-      margin: 0 0 2px;
-      font-size: 14px;
-      color: var(--color-primary);
-    }
-
-    .tag-text {
+    .industry-items {
       margin: 0;
-      font-size: 12px;
-      color: var(--color-text-sub);
+      font-size: 14px;
+      line-height: 2;
+      color: var(--color-text-main);
+    }
+
+    .industry-items strong {
+      color: var(--color-primary);
+      font-weight: 600;
     }
 
 
