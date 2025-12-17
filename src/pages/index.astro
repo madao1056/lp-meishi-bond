@@ -4,6 +4,8 @@
 // ・初対面の経営者に「何を頼める人か」「どんな強みがあるか」を端的に伝える
 // ・無料資料のダウンロードと相談フォーム送信をゴールにする
 
+import "../styles/global.css";
+
 const pageTitle =
   "人とデジタルのバランスを整え、地域の事業を成長へ導く｜合同会社ぼんど";
 const pageDescription =
@@ -18,30 +20,42 @@ const currentYear = new Date().getFullYear();
     <meta name="description" content={pageDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {/*
+    {
+      /*
       名刺専用LPのため、検索流入は想定しない場合は noindex を推奨
       公開後に通常のLPとしても使うなら、この meta は削除
-    */}
+    */
+    }
     <meta name="robots" content="noindex,nofollow" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     {/* Google Analytics (GA4) */}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFL87L1WFX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFL87L1WFX"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-EFL87L1WFX');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-EFL87L1WFX");
     </script>
 
     {/* Microsoft Clarity - Analytics */}
     <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "udq553pjbn");
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "udq553pjbn");
     </script>
   </head>
   <body>
@@ -50,23 +64,22 @@ const currentYear = new Date().getFullYear();
         <div class="hero-text">
           <p class="hero-label">合同会社ぼんど / 橋口 真幸</p>
           <h1 class="hero-title">
-            人とデジタルの<br>
-            バランスを整え<br>
-            地域の事業を成長へ導く
+            地域の挑戦と<br />
+            お客さまをつなぐ、<br />
+            絆（きずな）の<br />
+            ような存在へ。
           </h1>
           <p class="hero-sub">
-            宮崎の事業者の本音を丁寧に引き出し、<br>
-            最適な形に整える伴走型デジタル支援。
-          </p>
-          <p class="hero-desc">
-            Web制作・集客サポート・AI自動化・<br>
-            ローカルメディア運営まで、<br>
-            事業のステージにあわせて<br>
-            一気通貫でサポートします。
+            宮崎を拠点に、Web制作・EC構築・MEO・LINE・DX支援・ローカルメディア運営を通じて、事業者とお客さまの関係性が続く仕組みをデザインします。
           </p>
           <div class="hero-actions">
             <a href="#materials" class="btn-secondary">(無料)資料を受け取る</a>
-            <a href="https://bond-llc.jp" target="_blank" rel="noopener noreferrer" class="btn-outline">
+            <a
+              href="https://bond-llc.jp"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-outline"
+            >
               事業サイトを見る →
             </a>
           </div>
@@ -74,10 +87,12 @@ const currentYear = new Date().getFullYear();
 
         <div class="hero-visual">
           <div class="hero-photo-card">
-            {/*
+            {
+              /*
               ここは名刺と同じ顔写真を配置
               /images/gussan-profile.jpg はプロジェクト側で用意してください
-            */}
+            */
+            }
             <img
               src="/gussan-image.webp"
               alt="合同会社ぼんど 代表 橋口真幸"
@@ -101,10 +116,15 @@ const currentYear = new Date().getFullYear();
 
           <div class="grid grid-2">
             <div class="card service-card">
-              <img src="/card01.jpg" alt="" class="card-bg-image" loading="lazy" />
+              <img
+                src="/card01.jpg"
+                alt=""
+                class="card-bg-image"
+                loading="lazy"
+              />
               <h3 class="card-title">Web制作（HP / LP / EC）</h3>
               <p class="card-text">
-                事業の目的から逆算して、「作って終わり」ではなく<br>
+                事業の目的から逆算して、「作って終わり」ではなく<br />
                 きちんと使われるWebサイトを設計します。
               </p>
               <ul class="list">
@@ -115,10 +135,15 @@ const currentYear = new Date().getFullYear();
             </div>
 
             <div class="card service-card">
-              <img src="/card02.jpg" alt="" class="card-bg-image" loading="lazy" />
+              <img
+                src="/card02.jpg"
+                alt=""
+                class="card-bg-image"
+                loading="lazy"
+              />
               <h3 class="card-title">集客サポート（MEO / SNS / LINE）</h3>
               <p class="card-text">
-                来店・予約・お問い合わせにつながる導線設計を重視し、<br>
+                来店・予約・お問い合わせにつながる導線設計を重視し、<br />
                 店舗・事業の実態にあわせて設計します。
               </p>
               <ul class="list">
@@ -129,10 +154,16 @@ const currentYear = new Date().getFullYear();
             </div>
 
             <div class="card service-card">
-              <img src="/card03.jpg" alt="" class="card-bg-image" loading="lazy" />
+              <img
+                src="/card03.jpg"
+                alt=""
+                class="card-bg-image"
+                loading="lazy"
+              />
               <h3 class="card-title">AI自動化（予約 / 分析 / 業務効率化）</h3>
               <p class="card-text">
-                予約受付、集計、定型連絡などの「繰り返し作業」を仕組み化し、<br>
+                予約受付、集計、定型連絡などの「繰り返し作業」を仕組み化し、<br
+                />
                 売上につながる時間を増やします。
               </p>
               <ul class="list">
@@ -143,10 +174,15 @@ const currentYear = new Date().getFullYear();
             </div>
 
             <div class="card service-card">
-              <img src="/card04.jpg" alt="" class="card-bg-image" loading="lazy" />
+              <img
+                src="/card04.jpg"
+                alt=""
+                class="card-bg-image"
+                loading="lazy"
+              />
               <h3 class="card-title">地域ビジネスの総合支援</h3>
               <p class="card-text">
-                宮崎特有の人間関係や商習慣を踏まえつつ、<br>
+                宮崎特有の人間関係や商習慣を踏まえつつ、<br />
                 デジタルで一気に進められる部分を仕組みにしていきます。
               </p>
               <ul class="list">
@@ -161,68 +197,95 @@ const currentYear = new Date().getFullYear();
           <div class="section-header">
             <h2 class="section-title">クライアントの悩みを自分ごとに</h2>
             <p class="section-lead">
-              表面的な解決策ではなく、本質的な課題から向き合う。<br>
+              表面的な解決策ではなく、本質的な課題から向き合う。<br />
               あなたの悩みを私の悩みとして、一緒に解決していきます。
             </p>
           </div>
 
           <div class="grid grid-3">
             <div class="card-flat attitude-card">
-              <img src="/card-flat01.jpg" alt="" class="card-flat-bg-image" loading="lazy" />
+              <img
+                src="/card-flat01.jpg"
+                alt=""
+                class="card-flat-bg-image"
+                loading="lazy"
+              />
               <p class="reason-label">姿勢 1</p>
               <h3 class="card-title-sm">現場の声を最優先に考える</h3>
               <p class="card-text-sm">
-                公務員時代に培った「現場第一主義」。<br>
-                実際に手を動かす人の負担や、<br>
-                日々の業務フローを理解した上で、<br>
+                公務員時代に培った「現場第一主義」。<br />
+                実際に手を動かす人の負担や、<br />
+                日々の業務フローを理解した上で、<br />
                 無理のない改善案を一緒に考えます。
               </p>
             </div>
 
             <div class="card-flat attitude-card">
-              <img src="/card-flat02.jpg" alt="" class="card-flat-bg-image" loading="lazy" />
+              <img
+                src="/card-flat02.jpg"
+                alt=""
+                class="card-flat-bg-image"
+                loading="lazy"
+              />
               <p class="reason-label">姿勢 2</p>
               <h3 class="card-title-sm">「わからない」を恥ずかしがらせない</h3>
               <p class="card-text-sm">
-                私も独学でゼロから学んできたからこそ、<br>
-                「わからない」ことの不安がよくわかります。<br>
-                専門用語を使わず、納得いくまで説明し、<br>
+                私も独学でゼロから学んできたからこそ、<br />
+                「わからない」ことの不安がよくわかります。<br />
+                専門用語を使わず、納得いくまで説明し、<br />
                 一緒に理解を深めていきます。
               </p>
             </div>
 
             <div class="card-flat attitude-card">
-              <img src="/card-flat03.jpg" alt="" class="card-flat-bg-image" loading="lazy" />
+              <img
+                src="/card-flat03.jpg"
+                alt=""
+                class="card-flat-bg-image"
+                loading="lazy"
+              />
               <p class="reason-label">姿勢 3</p>
               <h3 class="card-title-sm">言葉にならないモヤモヤも大切にする</h3>
               <p class="card-text-sm">
-                「なんとなく違う」「しっくりこない」<br>
-                そんな直感的な違和感こそ重要なサイン。<br>
-                じっくり話を聞いて、本当の願いや課題を<br>
+                「なんとなく違う」「しっくりこない」<br />
+                そんな直感的な違和感こそ重要なサイン。<br />
+                じっくり話を聞いて、本当の願いや課題を<br />
                 一緒に見つけていきます。
               </p>
             </div>
 
             <div class="card-flat attitude-card">
-              <img src="/card-flat04.jpg" alt="" class="card-flat-bg-image" loading="lazy" />
+              <img
+                src="/card-flat04.jpg"
+                alt=""
+                class="card-flat-bg-image"
+                loading="lazy"
+              />
               <p class="reason-label">姿勢 4</p>
-              <h3 class="card-title-sm">地域の関係性を壊さず、むしろ強くする</h3>
+              <h3 class="card-title-sm">
+                地域の関係性を壊さず、むしろ強くする
+              </h3>
               <p class="card-text-sm">
-                デジタル化で人の温かさが失われる？<br>
-                そんなことはありません。<br>
-                面倒な作業を減らすことで、人と人が向き合う<br>
+                デジタル化で人の温かさが失われる？<br />
+                そんなことはありません。<br />
+                面倒な作業を減らすことで、人と人が向き合う<br />
                 時間を増やす。それが私の考えるデジタル活用です。
               </p>
             </div>
 
             <div class="card-flat attitude-card">
-              <img src="/card-flat05.jpg" alt="" class="card-flat-bg-image" loading="lazy" />
+              <img
+                src="/card-flat05.jpg"
+                alt=""
+                class="card-flat-bg-image"
+                loading="lazy"
+              />
               <p class="reason-label">姿勢 5</p>
               <h3 class="card-title-sm">成功も失敗も、すべて共有する</h3>
               <p class="card-text-sm">
-                うまくいったことも、つまづいたことも、<br>
-                包み隠さず共有します。<br>
-                あなたの事業の成長が、私の喜び。<br>
+                うまくいったことも、つまづいたことも、<br />
+                包み隠さず共有します。<br />
+                あなたの事業の成長が、私の喜び。<br />
                 だから本気で向き合い、一緒に悩みます。
               </p>
             </div>
@@ -239,12 +302,13 @@ const currentYear = new Date().getFullYear();
 
           <div class="industry-list">
             <p class="industry-items">
-              <strong>飲食</strong>（メニュー動線・予約導線・LP改善）/ 
-              <strong>農業</strong>（内部データ管理・ECサイト制作）/ 
-              <strong>不動産</strong>（HP制作）/ 
-              <strong>医療</strong>（HP制作・改善）/ 
-              <strong>美容・サロン</strong>（チラシ・フライヤー制作・MEO初期設定）/ 
-              <strong>物販・EC</strong>（Shopify / BASE のEC最適化）/ 
+              <strong>飲食</strong>（メニュー動線・予約導線・LP改善）/
+              <strong>農業</strong>（内部データ管理・ECサイト制作）/
+              <strong>不動産</strong>（HP制作）/
+              <strong>医療</strong>（HP制作・改善）/
+              <strong>美容・サロン</strong
+              >（チラシ・フライヤー制作・MEO初期設定）/
+              <strong>物販・EC</strong>（Shopify / BASE のEC最適化）/
               <strong>地域団体</strong>（情報発信支援・LINE最適化・HP制作）
             </p>
           </div>
@@ -265,20 +329,21 @@ const currentYear = new Date().getFullYear();
               />
               <div class="project-content">
                 <p class="project-label">青森県 りんご農家</p>
-                <h3 class="project-title">自社ECサイト構築とファンづくりの導線設計</h3>
+                <h3 class="project-title">
+                  自社ECサイト構築とファンづくりの導線設計
+                </h3>
                 <p class="project-text">
                   産地の魅力や農家さんの想いが伝わるよう、<br
                     class="only-desktop"
                   />
-                  写真・文章・購入導線を一体で設計。<br>
+                  写真・文章・購入導線を一体で設計。<br />
                   リピートしやすい構成と情報設計を行いました。
                 </p>
                 <a
                   href="https://www.hirosaki-redapple.com/"
                   target="_blank"
                   rel="noreferrer"
-                  class="project-link"
-                  >サイトを見る</a
+                  class="project-link">サイトを見る</a
                 >
               </div>
             </article>
@@ -297,16 +362,15 @@ const currentYear = new Date().getFullYear();
                   スタートアップ・エコシステムにおける<br
                     class="only-desktop"
                   />
-                  女性活躍推進事業のサイト。<br>
-                  多数の関係者がいる中で情報を整理し、<br>
+                  女性活躍推進事業のサイト。<br />
+                  多数の関係者がいる中で情報を整理し、<br />
                   誰にとっても見やすい構成へと再設計しました。
                 </p>
                 <a
                   href="https://women-startup-vc.metro.tokyo.lg.jp/"
                   target="_blank"
                   rel="noreferrer"
-                  class="project-link"
-                  >サイトを見る</a
+                  class="project-link">サイトを見る</a
                 >
               </div>
             </article>
@@ -338,7 +402,7 @@ const currentYear = new Date().getFullYear();
           <div class="section-header">
             <h2 class="section-title">無料ダウンロード資料</h2>
             <p class="section-lead">
-              必要な資料を選んで、まとめて受け取れます。<br>
+              必要な資料を選んで、まとめて受け取れます。<br />
               相談前の情報整理や、社内での検討にもご活用ください。
             </p>
           </div>
@@ -372,21 +436,39 @@ const currentYear = new Date().getFullYear();
             </p>
           </div>
 
-          {/*
+          {
+            /*
             実運用では:
             - action に送信先エンドポイント（Formspree / 独自APIなど）を設定
             - method="POST" を指定
             - name 属性で項目名を決定
-          */}
-          <form class="form" action="https://formspree.io/f/mblvvybz" method="POST">
+          */
+          }
+          <form
+            class="form"
+            action="https://formspree.io/f/mblvvybz"
+            method="POST"
+          >
             <div class="form-row">
               <label class="form-label" for="name">お名前</label>
-              <input id="name" name="name" type="text" class="form-input" required />
+              <input
+                id="name"
+                name="name"
+                type="text"
+                class="form-input"
+                required
+              />
             </div>
 
             <div class="form-row">
               <label class="form-label" for="email">メールアドレス</label>
-              <input id="email" name="email" type="email" class="form-input" required />
+              <input
+                id="email"
+                name="email"
+                type="email"
+                class="form-input"
+                required
+              />
             </div>
 
             <div class="form-row">
@@ -409,34 +491,60 @@ const currentYear = new Date().getFullYear();
               <p class="form-label">ダウンロードしたい資料</p>
               <div class="form-checkbox-group">
                 <label class="checkbox">
-                  <input type="checkbox" name="materials" value="meo" />
+                  <input
+                    type="checkbox"
+                    name="materials"
+                    value="MEO対策 完全版"
+                  />
                   <span>MEO対策 完全版</span>
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" name="materials" value="line" />
+                  <input
+                    type="checkbox"
+                    name="materials"
+                    value="公式LINE 活用手順書"
+                  />
                   <span>公式LINE 活用手順書</span>
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" name="materials" value="hp" />
+                  <input
+                    type="checkbox"
+                    name="materials"
+                    value="生きたHP活用術"
+                  />
                   <span>生きたHP活用術</span>
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" name="materials" value="ec" />
+                  <input
+                    type="checkbox"
+                    name="materials"
+                    value="ECサイトの落とし穴"
+                  />
                   <span>ECサイトの落とし穴</span>
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" name="materials" value="ai" />
+                  <input
+                    type="checkbox"
+                    name="materials"
+                    value="AIを使った業務改善法"
+                  />
                   <span>AIを使った業務改善法</span>
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" name="materials" value="vendor" />
+                  <input
+                    type="checkbox"
+                    name="materials"
+                    value="いい業者・悪い業者の見分け方"
+                  />
                   <span>いい業者・悪い業者の見分け方</span>
                 </label>
               </div>
             </div>
 
             <div class="form-row">
-              <label class="form-label" for="message">ご相談・メッセージ（任意）</label>
+              <label class="form-label" for="message"
+                >ご相談・メッセージ（任意）</label
+              >
               <textarea
                 id="message"
                 name="message"
@@ -457,12 +565,17 @@ const currentYear = new Date().getFullYear();
         <section class="section section-alt section-final">
           <div class="final-inner">
             <p class="final-text">
-            あなたの事業を進めるためにできることは全てする。<br>
-            まずは、今どんな状況なのかを一緒に整理するところからはじめましょう。
+              あなたの事業を進めるためにできることは全てする。<br />
+              まずは、今どんな状況なのかを一緒に整理するところからはじめましょう。
             </p>
             <div class="final-actions">
               <a href="#contact" class="btn-primary">ぼんど に相談してみる</a>
-              <a href="https://bond-llc.jp" target="_blank" rel="noopener noreferrer" class="btn-outline">
+              <a
+                href="https://bond-llc.jp"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-outline"
+              >
                 事業サイトで詳しく見る →
               </a>
             </div>
@@ -475,582 +588,4 @@ const currentYear = new Date().getFullYear();
       </footer>
     </div>
   </body>
-
-  <style>
-    :root {
-      --color-bg: #fafaf9;
-      --color-surface: #ffffff;
-      --color-muted: #f3f4f6;
-
-      --color-primary: #1f2e6c;
-      --color-accent: #fad707;
-      --color-accent-deep: #d0a51d;
-      --color-earth: #734a27;
-
-      --color-text-main: #111827;
-      --color-text-sub: #4b5563;
-
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --radius-sm: 8px;
-
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-        "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", Meiryo,
-        sans-serif;
-      background: #eef6fc;
-      color: var(--color-text-main);
-      line-height: 1.7;
-    }
-
-    .page {
-      min-height: 100vh;
-      max-width: 750px;
-      margin: 0 auto;
-      padding: 24px 16px 14px;
-      background: radial-gradient(circle at top left, #fbf9ef 0, #fafaf9 48%, #f3f4f6 100%);
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin-bottom: 48px;
-      align-items: center;
-      text-align: center;
-    }
-
-    .hero-text {
-      padding: 0;
-    }
-
-    .hero-label {
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--color-earth);
-      margin: 0 0 8px;
-    }
-
-    .hero-title {
-      margin: 0 0 12px;
-      font-size: 28px;
-      line-height: 1.5;
-      color: var(--color-primary);
-    }
-
-    .hero-sub {
-      margin: 0 0 10px;
-      font-size: 15px;
-      color: var(--color-text-main);
-    }
-
-    .hero-desc {
-      margin: 0 0 20px;
-      font-size: 14px;
-      color: var(--color-text-sub);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .final-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .hero-visual {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .hero-photo-card {
-      position: relative;
-      background: var(--color-surface);
-      padding: 14px 14px 18px;
-      border-radius: 24px;
-      box-shadow: var(--shadow-soft);
-      text-align: center;
-    }
-
-    .hero-photo-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 24px;
-      padding: 1px;
-      background: linear-gradient(
-        135deg,
-        rgba(250, 215, 7, 0.7),
-        rgba(31, 46, 108, 0.7)
-      );
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-    }
-
-    .hero-photo {
-      display: block;
-      width: 240px;
-      height: auto;
-      border-radius: 999px;
-      margin: 0 auto 10px;
-      object-fit: cover;
-    }
-
-    .hero-name {
-      margin: 0 0 2px;
-      font-weight: 600;
-      color: var(--color-primary);
-    }
-
-    .hero-role {
-      margin: 0;
-      font-size: 12px;
-      color: var(--color-text-sub);
-    }
-
-    .btn-primary,
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 20px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-size: 14px;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: transform 0.12s ease, box-shadow 0.12s ease,
-        background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--color-primary);
-      color: #ffffff;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.22);
-    }
-
-    .btn-secondary {
-      background: rgba(250, 215, 7, 0.08);
-      color: var(--color-primary);
-      border-color: rgba(31, 46, 108, 0.16);
-      margin-inline:auto;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(250, 215, 7, 0.16);
-      border-color: rgba(31, 46, 108, 0.28);
-    }
-
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 20px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-size: 14px;
-      background: transparent;
-      color: var(--color-primary);
-      border: 1px solid rgba(31, 46, 108, 0.3);
-      transition: all 0.15s ease;
-      cursor: pointer;
-      margin-inline:auto;
-    }
-
-    .btn-outline:hover {
-      background: rgba(31, 46, 108, 0.05);
-      border-color: rgba(31, 46, 108, 0.5);
-      transform: translateY(-1px);
-    }
-
-    .section {
-      padding: 32px 0;
-    }
-
-    .section-alt {
-      background: rgba(255, 255, 255, 0.7);
-      padding-inline: 18px;
-      padding-block: 32px;
-      margin-inline: -18px;
-    }
-
-    .section-header {
-      margin-bottom: 18px;
-    }
-
-    .section-title {
-      margin: 0 0 6px;
-      font-size: 20px;
-      color: var(--color-primary);
-    }
-
-    .section-lead {
-      margin: 0;
-      font-size: 14px;
-      color: var(--color-text-sub);
-    }
-
-    .grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .grid-2 {
-      grid-template-columns: minmax(0, 1fr);
-    }
-
-    .grid-3 {
-      grid-template-columns: minmax(0, 1fr);
-    }
-
-    .card {
-      background: var(--color-surface);
-      border-radius: var(--radius-lg);
-      padding: 18px 18px 16px;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      min-height: 14rem;
-      overflow:hidden;
-    }
-
-    .service-card {
-      position: relative;
-    }
-
-    .card-bg-image {
-      position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 75%;
-    height: 70%;
-      object-fit: cover;
-      clip-path: polygon(100% 30%,50% 100%,100% 100%);
-      z-index: 0;
-      opacity:0.4;
-    }
-
-    .service-card > *:not(.card-bg-image) {
-      position: relative;
-      z-index: 1;
-    }
-
-    .card-flat {
-      background: rgba(255, 255, 255, 0.75);
-      border-radius: var(--radius-md);
-      padding: 14px 14px 12px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-    }
-
-    .attitude-card {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card-flat-bg-image {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 35%;
-      height: 100%;
-      object-fit: cover;
-      clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
-      opacity: 0.3;
-      z-index: 0;
-    }
-
-    .attitude-card > *:not(.card-flat-bg-image) {
-      position: relative;
-      z-index: 1;
-    }
-
-    .card-title {
-      margin: 0 0 6px;
-      font-size: 15px;
-      color: var(--color-primary);
-    }
-
-    .card-title-sm {
-      margin: 0 0 4px;
-      font-size: 14px;
-      color: var(--color-primary);
-    }
-
-    .card-text {
-      margin: 0 0 8px;
-      font-size: 13px;
-      color: var(--color-text-sub);
-    }
-
-    .card-text-sm {
-      margin: 0;
-      font-size: 12px;
-      color: var(--color-text-sub);
-    }
-
-    .reason-label {
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--color-earth);
-      margin: 0 0 4px;
-    }
-
-    .list {
-      margin: 0;
-      padding-left: 18px;
-      font-size: 13px;
-      color: var(--color-text-main);
-    }
-
-    .list li + li {
-      margin-top: 4px;
-    }
-
-    .list-big {
-      margin: 0;
-      padding-left: 18px;
-      font-size: 14px;
-      color: var(--color-text-main);
-    }
-
-    .list-big li + li {
-      margin-top: 6px;
-    }
-
-    .industry-list {
-      background: var(--color-surface);
-      border-radius: var(--radius-lg);
-      padding: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.3);
-    }
-
-    .industry-items {
-      margin: 0;
-      font-size: 14px;
-      line-height: 2;
-      color: var(--color-text-main);
-    }
-
-    .industry-items strong {
-      color: var(--color-primary);
-      font-weight: 600;
-    }
-
-
-    .project-label {
-      margin: 0 0 4px;
-      font-size: 12px;
-      color: var(--color-earth);
-    }
-
-    .project-title {
-      margin: 0 0 6px;
-      font-size: 15px;
-      color: var(--color-primary);
-    }
-
-    .project-text {
-      margin: 0 0 8px;
-      font-size: 13px;
-      color: var(--color-text-sub);
-    }
-
-    .project-link {
-      font-size: 13px;
-      color: var(--color-primary);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(31, 46, 108, 0.4);
-      padding-bottom: 1px;
-    }
-
-    .project-link:hover {
-      border-bottom-color: rgba(31, 46, 108, 0.8);
-    }
-
-    .story {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: var(--radius-lg);
-      padding: 18px 18px 16px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
-      font-size: 13px;
-      color: var(--color-text-main);
-    }
-
-    .story p {
-      margin: 0 0 10px;
-    }
-
-    .story p:last-child {
-      margin-bottom: 0;
-    }
-
-    .notice {
-      background: rgba(250, 215, 7, 0.07);
-      border-radius: var(--radius-lg);
-      padding: 14px 16px;
-      border: 1px solid rgba(208, 165, 29, 0.4);
-    }
-
-    .notice-title {
-      margin: 0 0 6px;
-      font-size: 14px;
-      color: var(--color-earth);
-    }
-
-    .form {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 24px;
-      padding: 20px 18px 18px;
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      width: 100%;
-    }
-
-    .form-row {
-      margin-bottom: 12px;
-    }
-
-    .form-label {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 13px;
-      color: var(--color-text-main);
-    }
-
-    .form-input,
-    .form-textarea {
-      width: 100%;
-      padding: 8px 10px;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      font-size: 14px;
-      font-family: inherit;
-      outline: none;
-      transition: border-color 0.12s ease, box-shadow 0.12s ease;
-      background: #ffffff;
-    }
-
-    .form-input:focus,
-    .form-textarea:focus {
-      border-color: var(--color-primary);
-      box-shadow: 0 0 0 1px rgba(31, 46, 108, 0.2);
-    }
-
-    .form-textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    .form-checkbox-group {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 8px;
-    }
-
-    .checkbox {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      color: var(--color-text-main);
-    }
-
-    .checkbox input {
-      width: 14px;
-      height: 14px;
-    }
-
-    .form-actions {
-      margin-top: 16px;
-      text-align: center;
-    }
-
-    .section-final {
-      text-align: center;
-    }
-
-    .final-inner {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .final-text {
-      margin: 0 0 14px;
-      font-size: 14px;
-      color: var(--color-text-main);
-    }
-
-    .footer {
-      margin-top: 14px;
-      text-align: center;
-      font-size: 11px;
-      color: var(--color-text-sub);
-    }
-
-    .footer-text {
-      margin: 0;
-    }
-
-    .only-desktop {
-      display: none;
-    }
-
-    .project-card {
-      background: var(--color-surface);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      box-shadow: 0 10px 32px rgba(15, 23, 42, 0.06);
-    }
-
-    .project-image {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      display: block;
-    }
-
-    .project-content {
-      padding: 18px 18px 14px;
-    }
-
-    .section-alt {
-      margin-inline: -14px;
-      padding-inline: 14px;
-    }
-
-    @media (min-width: 751px) {
-      body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-      }
-    }
-  </style>
 </html>
