@@ -73,7 +73,7 @@ const currentYear = new Date().getFullYear();
             宮崎を拠点に、Web制作・EC構築・MEO・LINE・DX支援・ローカルメディア運営を通じて、事業者とお客さまの関係性が続く仕組みをデザインします。
           </p>
           <div class="hero-actions">
-            <a href="#materials" class="btn-secondary">(無料)資料を受け取る</a>
+            {/* <a href="#materials" class="btn-secondary">(無料)資料を受け取る</a> */}
             <a
               href="https://bond-llc.jp"
               target="_blank"
@@ -398,6 +398,7 @@ const currentYear = new Date().getFullYear();
           </div>
         </section>
 
+        {/* 資料セクションを非表示
         <section class="section section-alt" id="materials">
           <div class="section-header">
             <h2 class="section-title">無料ダウンロード資料</h2>
@@ -427,12 +428,13 @@ const currentYear = new Date().getFullYear();
             </div>
           </div>
         </section>
+        */}
 
         <section class="section" id="contact">
           <div class="section-header">
-            <h2 class="section-title">資料請求・ご相談フォーム</h2>
+            <h2 class="section-title">ご相談フォーム</h2>
             <p class="section-lead">
-              下記フォームから資料請求とご相談を受け付けています。
+              下記フォームからご相談を受け付けています。
             </p>
           </div>
 
@@ -487,6 +489,7 @@ const currentYear = new Date().getFullYear();
               />
             </div>
 
+            {/* 資料選択チェックボックスを非表示
             <div class="form-row">
               <p class="form-label">ダウンロードしたい資料</p>
               <div class="form-checkbox-group">
@@ -540,6 +543,7 @@ const currentYear = new Date().getFullYear();
                 </label>
               </div>
             </div>
+            */}
 
             <div class="form-row">
               <label class="form-label" for="message"
@@ -556,7 +560,7 @@ const currentYear = new Date().getFullYear();
 
             <div class="form-actions">
               <button type="submit" class="btn-primary">
-                資料を請求する / 相談内容を送信する
+                相談内容を送信する
               </button>
             </div>
           </form>
