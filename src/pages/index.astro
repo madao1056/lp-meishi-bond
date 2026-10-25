@@ -2,7 +2,7 @@
 // 名刺のQRコードから遷移する専用LPページ
 // 目的:
 // ・初対面の経営者に「何を頼める人か」「どんな強みがあるか」を端的に伝える
-// ・無料資料のダウンロードと相談フォーム送信をゴールにする
+// ・相談フォーム送信をゴールにする（Instagramへの導線もあり）
 
 import "../styles/global.css";
 
@@ -73,7 +73,14 @@ const currentYear = new Date().getFullYear();
             宮崎を拠点に、Web制作・EC構築・MEO・LINE・DX支援・ローカルメディア運営を通じて、事業者とお客さまの関係性が続く仕組みをデザインします。
           </p>
           <div class="hero-actions">
-            {/* <a href="#materials" class="btn-secondary">(無料)資料を受け取る</a> */}
+            <a
+              href="https://www.instagram.com/bond_hashiguchi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+            >
+              Instagramを見る
+            </a>
             <a
               href="https://bond-llc.jp"
               target="_blank"
@@ -398,37 +405,24 @@ const currentYear = new Date().getFullYear();
           </div>
         </section>
 
-        {/* 資料セクションを非表示
-        <section class="section section-alt" id="materials">
+        <section class="section section-alt" id="instagram">
           <div class="section-header">
-            <h2 class="section-title">無料ダウンロード資料</h2>
+            <h2 class="section-title">Instagramで発信しています</h2>
             <p class="section-lead">
-              必要な資料を選んで、まとめて受け取れます。<br />
-              相談前の情報整理や、社内での検討にもご活用ください。
+              宮崎の会社・お店でのAIの使い方や、実際に自腹で試したAIの正直なレビューを、短い動画で紹介しています。
             </p>
           </div>
-
-          <div class="grid grid-2">
-            <ul class="list-big">
-              <li>MEO対策 完全版</li>
-              <li>公式LINE 活用手順書</li>
-              <li>生きたHP活用術</li>
-              <li>ECサイトの落とし穴</li>
-              <li>AIを使った業務改善法</li>
-              <li>いい業者・悪い業者の見分け方</li>
-            </ul>
-
-            <div class="notice">
-              <p class="notice-title">こんな方に特におすすめです</p>
-              <ul class="list">
-                <li>とりあえず何から手を付ければよいか整理したい</li>
-                <li>業者選びで失敗したくない</li>
-                <li>自社にとって本当に必要な施策だけを知りたい</li>
-              </ul>
-            </div>
+          <div class="hero-actions">
+            <a
+              href="https://www.instagram.com/bond_hashiguchi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+            >
+              Instagram（@bond_hashiguchi）を見る →
+            </a>
           </div>
         </section>
-        */}
 
         <section class="section" id="contact">
           <div class="section-header">
@@ -489,61 +483,6 @@ const currentYear = new Date().getFullYear();
               />
             </div>
 
-            {/* 資料選択チェックボックスを非表示
-            <div class="form-row">
-              <p class="form-label">ダウンロードしたい資料</p>
-              <div class="form-checkbox-group">
-                <label class="checkbox">
-                  <input
-                    type="checkbox"
-                    name="materials"
-                    value="MEO対策 完全版"
-                  />
-                  <span>MEO対策 完全版</span>
-                </label>
-                <label class="checkbox">
-                  <input
-                    type="checkbox"
-                    name="materials"
-                    value="公式LINE 活用手順書"
-                  />
-                  <span>公式LINE 活用手順書</span>
-                </label>
-                <label class="checkbox">
-                  <input
-                    type="checkbox"
-                    name="materials"
-                    value="生きたHP活用術"
-                  />
-                  <span>生きたHP活用術</span>
-                </label>
-                <label class="checkbox">
-                  <input
-                    type="checkbox"
-                    name="materials"
-                    value="ECサイトの落とし穴"
-                  />
-                  <span>ECサイトの落とし穴</span>
-                </label>
-                <label class="checkbox">
-                  <input
-                    type="checkbox"
-                    name="materials"
-                    value="AIを使った業務改善法"
-                  />
-                  <span>AIを使った業務改善法</span>
-                </label>
-                <label class="checkbox">
-                  <input
-                    type="checkbox"
-                    name="materials"
-                    value="いい業者・悪い業者の見分け方"
-                  />
-                  <span>いい業者・悪い業者の見分け方</span>
-                </label>
-              </div>
-            </div>
-            */}
 
             <div class="form-row">
               <label class="form-label" for="message"
