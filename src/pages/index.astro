@@ -442,7 +442,8 @@ const currentYear = new Date().getFullYear();
           }
           <form
             class="form"
-            action="https://formspree.io/f/mblvvybz"
+            id="contact-form"
+            action="https://bond-llc.jp/api/contact"
             method="POST"
           >
             <div class="form-row">
@@ -503,6 +504,7 @@ const currentYear = new Date().getFullYear();
               </button>
             </div>
           </form>
+          <p class="section-lead" id="contact-status" role="status" aria-live="polite"></p>
         </section>
 
         <section class="section section-alt section-final">
@@ -530,5 +532,44 @@ const currentYear = new Date().getFullYear();
         <p class="footer-text">© {currentYear} 合同会社ぼんど / Bond LLC</p>
       </footer>
     </div>
+    <script>
+      // 送信先はぼんどサイトのお問い合わせAPI（Larkに「流入元: 名刺」で記録される）
+      const contactApi =
+        location.hostname === 'localhost' ? 'http://localhost:4321/api/contact' : 'https://bond-llc.jp/api/contact';
+      const form = document.getElementById('contact-form') as HTMLFormElement | null;
+      const status = document.getElementById('contact-status');
+      form?.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const button = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+        if (button) button.disabled = true;
+        if (status) status.textContent = '送信しています…';
+        try {
+          const res = await fetch(contactApi, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              source: 'meishi',
+              name: data.get('name') ?? '',
+              email: data.get('email') ?? '',
+              phone: data.get('tel') ?? '',
+              business: data.get('business') ?? '',
+              message: data.get('message') ?? '',
+              page: location.href,
+            }),
+          });
+          const result = await res.json().catch(() => ({}));
+          if (!res.ok) throw new Error(result.error ?? '送信に失敗しました。');
+          form.reset();
+          if (status) status.textContent = '送信しました。確認メールをお送りしましたので、ご確認ください。';
+        } catch (error) {
+          if (status)
+            status.textContent =
+              (error instanceof Error ? error.message : '送信に失敗しました。') + ' 時間をおいて再度お試しください。';
+        } finally {
+          if (button) button.disabled = false;
+        }
+      });
+    </script>
   </body>
 </html>
