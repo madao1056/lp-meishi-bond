@@ -446,6 +446,15 @@ const currentYear = new Date().getFullYear();
             action="https://bond-llc.jp/api/contact"
             method="POST"
           >
+            {/* スパム対策の honeypot。人には見えず読み上げもされない */}
+            <div
+              aria-hidden="true"
+              style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"
+            >
+              <label for="website">この欄は空のままにしてください</label>
+              <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" value="" data-1p-ignore data-lpignore="true" data-bwignore data-form-type="other" />
+            </div>
+
             <div class="form-row">
               <label class="form-label" for="name">お名前</label>
               <input
@@ -538,6 +547,8 @@ const currentYear = new Date().getFullYear();
         location.hostname === 'localhost' ? 'http://localhost:4321/api/contact' : 'https://bond-llc.jp/api/contact';
       const form = document.getElementById('contact-form') as HTMLFormElement | null;
       const status = document.getElementById('contact-status');
+      // スパム対策: 表示から送信までの時間をサーバーで見る
+      const formLoadedAt = Date.now();
       form?.addEventListener('submit', async (event) => {
         event.preventDefault();
         const data = new FormData(form);
@@ -556,6 +567,9 @@ const currentYear = new Date().getFullYear();
               business: data.get('business') ?? '',
               message: data.get('message') ?? '',
               page: location.href,
+              website: data.get('website') ?? '',
+              formLoadedAt,
+              submittedAt: Date.now(),
             }),
           });
           const result = await res.json().catch(() => ({}));
